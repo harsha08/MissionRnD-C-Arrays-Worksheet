@@ -67,6 +67,7 @@ namespace spec
 			struct student students[3] = { { "stud1", 60 }, { "stud2", 70 }, { "stud3", 50 } };
 			struct student **result = topKStudents(students, 3, 5);
 			int exp[] = { 50, 60, 70 };
+			//printf("harsha");
 			Assert::IsTrue(validate(exp, 3, result), L"K greater than length case failed.", LINE_INFO());
 		}
 

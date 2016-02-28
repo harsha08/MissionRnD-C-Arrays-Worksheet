@@ -13,9 +13,29 @@ ERROR CASES: Return -1 for invalid inputs.
 NOTES: Don't create new array, try to change the input array.
 */
 
-
 int removeArrayDuplicates(int *Arr, int len)
 {
-	
-	return -1;
+	int i = 0, j = 0,x=0;
+	if (Arr == nullptr || len<0)
+	{
+		return -1;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		for (j = i+1; j < len; j++)
+		{
+			if (Arr[i] == Arr[j])
+			{
+				for (x = j; x < len; x++)
+				{
+					Arr[x] = Arr[x + 1];
+				}
+				len--;
+			}
+			else 
+				continue;
+		}
+	}
+	return len;
 }
